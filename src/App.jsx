@@ -14,7 +14,10 @@ export default function App(){
 
   return(
     <>
-        <h1 id="heading">Font Fusion</h1>
+        <div className='heading'>
+          <h1 id="heading">Font Fusion</h1>
+        </div>
+        
         <div className='parent'>
             <div id='child1'>
                 <h1 contentEditable="true" id="text">Write your text...</h1>
