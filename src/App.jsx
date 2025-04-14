@@ -50,18 +50,18 @@ export default function App(){
                 <div id='text-color'>
                   <h2 id="sub-heading">Choose your text Color</h2>
                   <div id="text-color-names">
-                    <button id='red' onClick={()=>{textColor('red')}}></button>
-                    <button id='green' onClick={()=>{textColor('green')}}></button>
-                    <button id='blue' onClick={()=>{textColor('blue')}}></button>
-                    <button id='yellow' onClick={()=>{textColor('yellow')}}></button>
-                    <button id='purple' onClick={()=>{textColor('purple')}}></button>
+                    <button id='red' onClick={()=>textColor('red')}></button>
+                    <button id='green' onClick={()=>textColor('green')}></button>
+                    <button id='blue' onClick={()=>textColor('blue')}></button>
+                    <button id='yellow' onClick={()=>textColor('yellow')}></button>
+                    <button id='purple' onClick={()=>textColor('purple')}></button>
                     
                     <input 
                     type='color'
                     value={tcolor}
                     onChange={(event)=>{
                       setTColor(event.target.value)
-                      textColor(event.target.value)
+                      textColor(tcolor)
                     }}
                     />
                   </div>
@@ -81,7 +81,7 @@ export default function App(){
                     value={bgCol}
                     onChange={(event)=>{
                       setBgCol(event.target.value)
-                      bgColor(event.target.value)
+                      bgColor(bgCol)
                     }}
                     />
                   </div>
