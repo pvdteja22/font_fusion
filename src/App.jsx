@@ -21,6 +21,11 @@ export default function App(){
     image.current.style.fontFamily=fontName
   }
 
+  const textAlign= (alignment)=>{
+    image.current.style.textAlign=alignment
+
+  }
+
   const downloadImage = () =>{
     screenshot(image.current).then(canvas => {
       const imageData = canvas.toDataURL("image/png")
@@ -84,6 +89,15 @@ export default function App(){
                       bgColor(bgCol)
                     }}
                     />
+                  </div>
+                </div>
+
+                <div id='text-align'>
+                  <h2 id='sub-heading'>Choose your Text Alignment</h2>
+                  <div id="alignments-list">
+                    <button id='Left' onClick={()=>{textAlign('left')}}><b>Left</b></button>
+                    <button id='Center' onClick={()=>{textAlign('center')}}><b>Center</b></button>
+                    <button id='Right' onClick={()=>{textAlign('right')}}><b>Right</b></button>
                   </div>
                 </div>
 
