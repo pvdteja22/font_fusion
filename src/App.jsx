@@ -7,6 +7,7 @@ export default function App(){
 
   const[tcolor, setTColor] = useState('000')
   const[bgCol, setBgCol] = useState('000')
+  const[fontsize, setFontsize] = useState(16)
   const image = useRef()
 
   const textColor= (colorName)=>{
@@ -25,6 +26,12 @@ export default function App(){
     image.current.style.textAlign=alignment
 
   }
+  const handleChange = (e) =>
+  {
+      setFontsize(e.target.value);
+      image.current.style.fontSize=`${fontsize}px`
+  }
+  
 
   const downloadImage = () =>{
     screenshot(image.current).then(canvas => {
@@ -107,6 +114,10 @@ export default function App(){
                       <h1 id='verdana' onClick={()=>{fontFamily('verdana')}}>Hello</h1>
                       <h1 id='arial'  onClick={()=>{fontFamily('arial')}}>Hello</h1>
                       <h1 id='impact' onClick={()=>{fontFamily('Impact')}}>Hello</h1>
+                </div>
+                <div id='fontSizeSlider'>
+                    <h2 id='sub-heading'>Select the Font-Size</h2>
+                    <input type="range" id="slider" min="10" max="50" value={fontsize} onChange={handleChange}/>
                 </div>
             </div>
         </div>
